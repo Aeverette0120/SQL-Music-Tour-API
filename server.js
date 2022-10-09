@@ -1,7 +1,9 @@
 // DEPENDENCIES
 const express = require('express')
 const app = express()
-
+const bandsController = require('./controllers/bands_controller');
+const eventsController = require('./controllers/events_controller');
+const stagesController = require('./controllers/stages_controller');
 
 
 
@@ -9,6 +11,10 @@ const app = express()
 require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
+app.use('/bands', bandsController)
+app.use('/events', eventsController);
+app.use('/stages', stagesController);
 
 // ROOT
 app.get('/', (req, res) => {
