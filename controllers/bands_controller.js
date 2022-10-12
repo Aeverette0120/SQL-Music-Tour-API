@@ -1,6 +1,5 @@
 const bands = require("express").Router();
 const db = require("../models");
-const band = require("../models/band");
 const { Band, MeetGreet, Event, SetTime } = db;
 const { Op } = require("sequelize");
 
