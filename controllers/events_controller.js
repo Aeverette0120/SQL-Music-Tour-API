@@ -27,7 +27,7 @@ events.get('/:name', async (req, res)=> {
     try {
             const foundEvent = await Event.findOne({
                 where:{
-                    event_id: req.params.id
+                    name: req.params.name
                 },
                 include: [
                     {
